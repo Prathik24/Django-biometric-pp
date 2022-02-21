@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block title %}My Form{% endblock %}
+{% block content %}
+ <h1 style="text-align: center;
+    margin-top: 1Rem;" >My form</h1>
+<div class="container-fluid">
+    <div class = "row">
+        <div class = "col-md-6>">
+            <form method="POST" action="{% url 'submitmyform' %}">
+                {% csrf_token %}
+                <div class="form-group" style="margin:0 auto;">
+                    <label for="mytext">My Text</label>
+                    <input type="text" id="mytext" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label for="mytextarea">MyTextarea</label>
+                    <textarea id="mytextarea" name="mytextarea" class="form-control" rows="3"></textarea>
+
+                </div>
+                <div class="form--group">
+                    <button type="submit" class="btn btn-primary" style="margin: auto;
+    display: block;">Submit</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
