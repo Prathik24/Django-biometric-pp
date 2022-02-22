@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
+
 
 
 # Create your views here.
@@ -8,8 +10,24 @@ def index(request):
     return render(request, 'index.html')
 
 
-def submitquery(request):
+def submitquery(request, mydictionary=None):
     q = request.GET['query']
-    return None
+    try:
+        ans = eval(q)
+        mydictionary ={
+        "q":q,
+        "ans":ans,
+        "error":False,
+        }
+        return render(request,'index.html',context=mydictionary)
+    except:
+        pass
+
+
+
+
+
+
+
 
 
