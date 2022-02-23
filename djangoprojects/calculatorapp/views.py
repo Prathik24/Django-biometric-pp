@@ -18,10 +18,17 @@ def submitquery(request, mydictionary=None):
         "q":q,
         "ans":ans,
         "error":False,
+        "result": True
         }
         return render(request,'index.html',context=mydictionary)
     except:
-        pass
+        mydictionary = {
+            "error": True,
+            "result": False
+
+        }
+        return render(request, 'index.html', context=mydictionary)
+
 
 
 
