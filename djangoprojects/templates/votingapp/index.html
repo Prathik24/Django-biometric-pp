@@ -50,7 +50,7 @@
         <img class="img-fluid" src="{% static 'main2.jpg' %}">
         <div class="card">
           <div class="card-body">
-            <form method="GET" action="{% url 'submitquery' %}">
+            <form method="GET" action="{% url 'getquery' %}">
               <input list="languages" class="form-control" style="margin-bottom: 1rem;" name="languages">
               <datalist id="languages">
                 {% for eachlanguage in arr %}
