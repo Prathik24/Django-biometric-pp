@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('calculatorapp', include('calculatorapp.urls')),
     path('votingapp', include('votingapp.urls')),
+    path('todoapp', include('todoapp.urls')),
 
 
 ]
